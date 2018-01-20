@@ -28,9 +28,20 @@ module.exports = {
 		rules: [
 			{
 				test: /\.jsx?$/,
-				loaders: ['react-hot-loader/webpack', {loader: 'babel-loader', options: {
-						plugins: ['transform-runtime']
-					}}],
+				enforce: 'pre',
+				exclude: /node_modules/,
+				loader: 'eslint-loader',
+			},
+			{
+				test: /\.jsx?$/,
+				loaders: [
+					'react-hot-loader/webpack',
+					{
+						loader: 'babel-loader',
+						options: {
+							plugins: ['transform-runtime']
+						}
+					}],
 				include: [
 					path.resolve(__dirname, 'src'),
 				],
