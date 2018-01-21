@@ -4,11 +4,12 @@
   "description": "Redux tutorial",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "build": "webpack",
+    "start": "npm run build && node prodServer.js",
+    "devstart": "node server.js"
   },
   "author": "Volodin Sergey",
   "license": "ISC",
-
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
