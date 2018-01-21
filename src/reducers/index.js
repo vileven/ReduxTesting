@@ -1,11 +1,10 @@
-const initialState = {
-	name: 'Sergey',
-	surname: 'Volodin',
-	age: 27
-};
+import { combineReducers } from 'redux';
+import page from './page';
+import user from './user';
 
-export default function userState(state = initialState) {
-	return state;
-}
+export default combineReducers({
+	page,
+	user,
+})
 
 module.hot.accept();
