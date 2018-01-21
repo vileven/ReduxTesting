@@ -32,6 +32,7 @@ function getMorePhotos(offset, count, year, dispatch) {
 				getMorePhotos(offset, count, year, dispatch);
 			} else {
 				let photos = makeYearPhotos(photosArr, year);
+				console.log('photos', photosArr, photos);
 				cached = true;
 				dispatch({
 					type: GET_PHOTOS_SUCCESS,
@@ -60,6 +61,7 @@ export function getPhotos(year) {
 
 		if (cached) {
 			let photos = makeYearPhotos(photosArr, year);
+			console.log('photos', photosArr, photos);
 			dispatch({
 				type: GET_PHOTOS_SUCCESS,
 				payload: photos
