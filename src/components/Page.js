@@ -9,11 +9,11 @@ export default class Page extends Component {
 	render() {
 		const { year, photos } = this.props;
 		return (
-			<div>
+			<div className='ib page'>
 				<p>
-					<button onClick={::this.onYearBtnClick}>2018</button>
-					<button onClick={::this.onYearBtnClick}>2017</button>
-					<button onClick={::this.onYearBtnClick}>2016</button>
+					<button className='btn' onClick={::this.onYearBtnClick}>2018</button>
+					<button className='btn' onClick={::this.onYearBtnClick}>2017</button>
+					<button className='btn' onClick={::this.onYearBtnClick}>2016</button>
 				</p>
 				<h3>{year} год</h3>
 				<p>У тебя {photos.length} фото за {year} год</p>

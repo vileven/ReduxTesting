@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const NpmInstallPlugin = require('npm-install-webpack-plugin');
 
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
@@ -18,6 +19,7 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.NamedModulesPlugin(),
+		new NpmInstallPlugin(),
 	],
 
 	devServer: {
@@ -45,7 +47,11 @@ module.exports = {
 				include: [
 					path.resolve(__dirname, 'src'),
 				],
+			},
+			{
+				test: /\.css$/,
+				loader: 'style-loader!css-loader!postcss-loader'
 			}
 		],
-	}
+	},
 };
