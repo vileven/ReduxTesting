@@ -5,3 +5,5 @@ const initialState = {
 export default function userState(state = initialState) {
 	return state;
 }
+
+module.hot.accept();
